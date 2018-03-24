@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPlayer", "FormPlayer\FormPlayer.csproj", "{1766B3A6-FA13-4EC3-BB83-C6452A0B50FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormPlayer_Tests", "FormPlayer_Tests\FormPlayer_Tests.csproj", "{E2B634EF-E772-4E9A-B41B-7B4EF720C68B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1766B3A6-FA13-4EC3-BB83-C6452A0B50FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1766B3A6-FA13-4EC3-BB83-C6452A0B50FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1766B3A6-FA13-4EC3-BB83-C6452A0B50FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1766B3A6-FA13-4EC3-BB83-C6452A0B50FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B634EF-E772-4E9A-B41B-7B4EF720C68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B634EF-E772-4E9A-B41B-7B4EF720C68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B634EF-E772-4E9A-B41B-7B4EF720C68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B634EF-E772-4E9A-B41B-7B4EF720C68B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D0B2597-A018-4B59-BA04-CFF3325AFB38}
+	EndGlobalSection
+EndGlobal

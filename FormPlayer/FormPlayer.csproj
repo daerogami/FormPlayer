@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1766B3A6-FA13-4EC3-BB83-C6452A0B50FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuantumGate</RootNamespace>
+    <AssemblyName>Quantum Gate</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>QuantumGate.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vlc.DotNet.Core, Version=2.1.142.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.2.1.142\lib\net45\AnyCPU\Vlc.DotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=2.1.142.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.2.1.142\lib\net45\AnyCPU\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=2.1.142.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Forms.2.1.142\lib\net45\AnyCPU\Vlc.DotNet.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameObjects\Actors\Abstract\FormActor.cs" />
+    <Compile Include="GameObjects\Actors\Concrete\HotspotActor.cs" />
+    <Compile Include="GameObjects\Actors\Concrete\ImageActor.cs" />
+    <Compile Include="GameObjects\Actors\Concrete\SoundActor.cs" />
+    <Compile Include="GameObjects\Actors\Concrete\VideoActor.cs" />
+    <Compile Include="GameObjects\Actors\Factories\HotspotActorFactory.cs" />
+    <Compile Include="GameObjects\Actors\Interfaces\IActor.cs" />
+    <Compile Include="GameObjects\Actors\Interfaces\IFormActor.cs" />
+    <Compile Include="GameObjects\Beats\Concrete\ChangeStageBeat.cs" />
+    <Compile Include="GameObjects\Beats\Concrete\FadeBeat.cs" />
+    <Compile Include="GameObjects\Beats\Concrete\MovementBeat.cs" />
+    <Compile Include="GameObjects\Beats\Concrete\CueBeat.cs" />
+    <Compile Include="GameObjects\Beats\Concrete\TriggerVideoStartBeat.cs" />
+    <Compile Include="GameObjects\Beats\Concrete\VisiblilityBeat.cs" />
+    <Compile Include="GameObjects\Beats\Interface\IVideoBeat.cs" />
+    <Compile Include="GameObjects\Beats\Interface\IBeat.cs" />
+    <Compile Include="GameObjects\Beats\Interface\IHaveDuration.cs" />
+    <Compile Include="GameObjects\Beats\Interface\ITriggerVideoStart.cs" />
+    <Compile Include="GameObjects\Beats\Interface\ITriggerCue.cs" />
+    <Compile Include="GameObjects\Beats\Interface\ISetOpacity.cs" />
+    <Compile Include="GameObjects\Beats\Interface\ISetVisibility.cs" />
+    <Compile Include="GameObjects\Common\Interfaces\IHideable.cs" />
+    <Compile Include="GameObjects\Common\Interfaces\ILoadable.cs" />
+    <Compile Include="GameObjects\Contents\Abstract\Content.cs" />
+    <Compile Include="GameObjects\Contents\Concrete\Image.cs" />
+    <Compile Include="GameObjects\Contents\Concrete\Video.cs" />
+    <Compile Include="GameObjects\Contents\Concrete\Sound.cs" />
+    <Compile Include="GameObjects\Contents\Interface\IContent.cs" />
+    <Compile Include="GameObjects\Cues\Concrete\OnLoadCue.cs" />
+    <Compile Include="GameObjects\Cues\Interface\IVideoCue.cs" />
+    <Compile Include="GameObjects\CustomExceptions.cs" />
+    <Compile Include="GameObjects\GameInitializers\Abstract\StoryData.cs" />
+    <Compile Include="GameObjects\GameInitializers\Concrete\QuantumGateTwoInitializer.cs" />
+    <Compile Include="GameObjects\GameInitializers\Concrete\CustomStoryInitializer.cs" />
+    <Compile Include="GameObjects\GameInitializers\Concrete\QuantumGateInitializer.cs" />
+    <Compile Include="GameObjects\GameInitializers\Concrete\QuantumGateStoryData.cs" />
+    <Compile Include="GameObjects\GameInitializers\Interface\IStoryData.cs" />
+    <Compile Include="GameObjects\StateManager.cs" />
+    <Compile Include="GameObjects\States\Abstract\State.cs" />
+    <Compile Include="GameObjects\States\Concrete\EditorState.cs" />
+    <Compile Include="GameObjects\States\Concrete\MenuState.cs" />
+    <Compile Include="GameObjects\States\Interface\IState.cs" />
+    <Compile Include="GameObjects\StaticControls.cs" />
+    <Compile Include="GameObjects\Cues\Concrete\OnClickCue.cs" />
+    <Compile Include="GameObjects\Cues\Concrete\OnVideoCompleteCue.cs" />
+    <Compile Include="GameObjects\Cues\Abstract\Cue.cs" />
+    <Compile Include="GameObjects\Cues\Interface\ICue.cs" />
+    <Compile Include="GameWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameWindow.Designer.cs">
+      <DependentUpon>GameWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameObjects\Enums.cs" />
+    <Compile Include="GameObjects\GameInitializers\Abstract\GameDataInitializer.cs" />
+    <Compile Include="GameObjects\GameInitializers\Interface\IGameDataInitializer.cs" />
+    <Compile Include="GameObjects\States\Concrete\GameState.cs" />
+    <None Include="GameObjects\RoomBuilder.cs" />
+    <Compile Include="GameObjects\Player.cs" />
+    <Compile Include="GameObjects\Stage.cs" />
+    <Compile Include="GameObjects\Actors\Abstract\Actor.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GameWindow.resx">
+      <DependentUpon>GameWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\QuantumGate\stages.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\QuantumGate2\quantumgate2cover.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\QuantumGate\quantumgatecover_sega.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\QuantumGate\manifest.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="QuantumGate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameObjects\Beats\Abstract\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
